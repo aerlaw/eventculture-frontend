@@ -12,7 +12,7 @@ const EventsSection = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/events')
+      .get('https://vercel.com/aerlaws-projects/eventculture-backend/api/events')
       .then((res) => {
         setEvents(res.data);
       })

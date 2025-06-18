@@ -20,7 +20,7 @@ const ParcoursCard = ({ parcours, ...props }) => {
     <div className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/50 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       <div className="relative h-48 overflow-hidden">
         <img 
-          src={parcoursData.image ? `http://localhost:5000/uploads/${parcoursData.image}` : 'https://via.placeholder.com/600x400?text=Image+non+disponible'}
+          src={parcoursData.image ? `https://vercel.com/aerlaws-projects/eventculture-backend/uploads/${parcoursData.image}` : 'https://via.placeholder.com/600x400?text=Image+non+disponible'}
           alt={parcoursData.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
