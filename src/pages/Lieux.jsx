@@ -8,7 +8,7 @@ import { Edit, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const fetchLieux = async () => {
-  const response = await axios.get('http://localhost:5000/api/lieux');
+  const response = await axios.get('https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux');
   return response.data;
 };
 
@@ -33,7 +33,7 @@ const Lieux = () => {
     if (!window.confirm('Êtes-vous sûr de vouloir supprimer ce lieu ?')) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/lieux/${lieuId}`, {
+      const res = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux/${lieuId}`, {
         method: 'DELETE',
       });
 

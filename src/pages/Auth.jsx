@@ -75,7 +75,7 @@ const Auth = () => {
 
   const handleLogin = async (data) => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
+      const res = await fetch('https://vercel.com/aerlaws-projects/eventculture-backend/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -115,7 +115,7 @@ const Auth = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://vercel.com/aerlaws-projects/eventculture-backend/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

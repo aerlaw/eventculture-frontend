@@ -10,7 +10,7 @@ const Parcours = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/parcours")
+      .get("https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours")
       .then((res) => setParcoursList(res.data))
       .catch((err) => console.error("Erreur lors du chargement des parcours :", err));
   }, []);

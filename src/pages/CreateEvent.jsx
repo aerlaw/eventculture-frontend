@@ -29,7 +29,7 @@ const CreateEvent = () => {
 
   // Charger la liste des lieux
   useEffect(() => {
-    fetch('http://localhost:5000/api/lieux')
+    fetch('https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux')
       .then(res => res.json())
       .then(data => setLieux(data));
   }, []);
@@ -37,7 +37,7 @@ const CreateEvent = () => {
   // Si on est en mode "modification" → charger l'event
  useEffect(() => {
   if (id) {
-    fetch(`http://localhost:5000/api/events/${id}`)
+    fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/events/${id}`)
       .then(res => res.json())
       .then(data => {
         // On attend que les lieux soient chargés
@@ -74,7 +74,7 @@ const CreateEvent = () => {
 
     try {
       const response = await fetch(
-        id ? `http://localhost:5000/api/events/${id}` : 'http://localhost:5000/api/events',
+        id ? `https://vercel.com/aerlaws-projects/eventculture-backend/api/events/${id}` : 'https://vercel.com/aerlaws-projects/eventculture-backend/api/events',
         {
           method: id ? 'PUT' : 'POST', // PUT si modification, POST si création
           headers: {

@@ -38,7 +38,7 @@ const Register = () => {
 
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-      await axios.post(`http://localhost:5000/api/participations`, {
+      await axios.post(`https://vercel.com/aerlaws-projects/eventculture-backend/api/participations`, {
         nom: form.nom,
         prenom: form.prenom,
         email: form.email,

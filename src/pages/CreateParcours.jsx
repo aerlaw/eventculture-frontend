@@ -26,7 +26,7 @@ const CreateParcours = () => {
   // Charger les lieux
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/lieux')
+      .get('https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux')
       .then((res) => setLieux(res.data))
       .catch((err) => console.error('Erreur lors du chargement des lieux :', err));
   }, []);
@@ -35,7 +35,7 @@ const CreateParcours = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:5000/api/parcours/${id}`)
+        .get(`https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours/${id}`)
         .then((res) => {
           const data = res.data;
           setFormData({
@@ -48,7 +48,7 @@ const CreateParcours = () => {
             user_id: '1',
             image: null
           });
-          setPreviewImage(data.image ? `http://localhost:5000/uploads/${data.image}` : null);
+          setPreviewImage(data.image ? `https://vercel.com/aerlaws-projects/eventculture-backend/uploads/${data.image}` : null);
         })
         .catch((err) => console.error('Erreur lors du chargement du parcours :', err));
     }
@@ -83,11 +83,11 @@ const CreateParcours = () => {
     try {
       if (id) {
         // Mode édition → PUT
-        await axios.put(`http://localhost:5000/api/parcours/${id}`, formPayload);
+        await axios.put(`https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours/${id}`, formPayload);
         alert('Parcours modifié avec succès.');
       } else {
         // Mode création → POST
-        await axios.post('http://localhost:5000/api/parcours/create', formPayload);
+        await axios.post('https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours/create', formPayload);
         alert('Parcours créé avec succès.');
       }
       navigate('/parcours');

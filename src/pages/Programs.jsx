@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 // ✅ Fonction pour récupérer tous les programmes
 const fetchPrograms = async () => {
-  const response = await axios.get('http://localhost:5000/api/programs');
+  const response = await axios.get('https://vercel.com/aerlaws-projects/eventculture-backend/api/programs');
   return response.data;
 };
 
@@ -39,7 +39,7 @@ const Programs = () => {
     try {
       const token = localStorage.getItem('token'); // ➜ récupérer le token !
 
-      const res = await fetch(`http://localhost:5000/api/programs/${programId}`, {
+      const res = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/programs/${programId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`, // ➜ envoyer le token

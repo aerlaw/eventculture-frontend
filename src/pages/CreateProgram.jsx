@@ -33,7 +33,7 @@ const [events, setEvents] = useState([]);
 useEffect(() => {
   const fetchEvents = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/events/user/${user.id}`, {
+      const response = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/events/user/${user.id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -55,7 +55,7 @@ useEffect(() => {
     if (!programId) return; // pas en mode edit
 
     try {
-      const response = await fetch(`http://localhost:5000/api/programs/${programId}`, {
+      const response = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/programs/${programId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -140,7 +140,7 @@ useEffect(() => {
     if (programId) {
       // 🟣 Mode EDITION → PUT
       const prog = programs[0]; // on n'édite qu'un seul programme
-      const response = await fetch(`http://localhost:5000/api/programs/${programId}`, {
+      const response = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/programs/${programId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -171,7 +171,7 @@ useEffect(() => {
     } else {
       // 🟣 Mode CREATION → POST
       for (const prog of programs) {
-        const response = await fetch('http://localhost:5000/api/programs', {
+        const response = await fetch('https://vercel.com/aerlaws-projects/eventculture-backend/api/programs', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

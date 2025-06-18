@@ -16,7 +16,7 @@ const Events = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/events")
+    axios.get("https://vercel.com/aerlaws-projects/eventculture-backend/api/events")
 
       .then((res) => setEvents(res.data))
       .catch((err) => console.error("Erreur lors du chargement des événements :", err));

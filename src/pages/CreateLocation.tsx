@@ -45,7 +45,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
   try {
-    const res = await fetch('http://localhost:5000/api/locations', {
+    const res = await fetch('https://vercel.com/aerlaws-projects/eventculture-backend/api/locations', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

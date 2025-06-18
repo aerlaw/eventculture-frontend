@@ -18,7 +18,7 @@ const Dashboard = () => {
     if (!user || !token) return;
 
     // MES participations
-    fetch(`http://localhost:5000/api/participations?user_id=${user.id}`, {
+    fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/participations?user_id=${user.id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -27,7 +27,7 @@ const Dashboard = () => {
 
     if (role === 'professionnel') {
       // MES événements
-      fetch(`http://localhost:5000/api/events?user_id=${user.id}`, {
+      fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/events?user_id=${user.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -35,7 +35,7 @@ const Dashboard = () => {
         .catch((err) => console.error(err));
 
       // MES lieux
-      fetch(`http://localhost:5000/api/lieux?user_id=${user.id}`, {
+      fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux?user_id=${user.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -43,7 +43,7 @@ const Dashboard = () => {
         .catch((err) => console.error(err));
 
       // événements récents (des autres)
-      fetch(`http://localhost:5000/api/events/recent?exclude_user_id=${user.id}`, {
+      fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/events/recent?exclude_user_id=${user.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())

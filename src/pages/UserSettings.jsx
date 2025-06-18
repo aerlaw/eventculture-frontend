@@ -23,7 +23,7 @@ const UserSettings = () => {
     const fetchUserData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5000/api/users/${id}`, {
+        const response = await axios.get(`https://vercel.com/aerlaws-projects/eventculture-backend/api/users/${id}`, {
           headers: { 'Authorization': `Bearer ${token}` },
         });
         const userData = response.data || {};
@@ -49,7 +49,7 @@ const UserSettings = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/users/${id}`, {
+      await axios.put(`https://vercel.com/aerlaws-projects/eventculture-backend/api/users/${id}`, {
         first_name: firstName, // Mettre à jour le prénom
         last_name: lastName,
         email,

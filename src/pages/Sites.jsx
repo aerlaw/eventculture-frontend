@@ -8,7 +8,7 @@ import { Edit, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const fetchSites = async () => {
-  const response = await axios.get('http://localhost:5000/api/sites');
+  const response = await axios.get('https://vercel.com/aerlaws-projects/eventculture-backend/api/sites');
   return response.data;
 };
 
@@ -31,7 +31,7 @@ const Sites = () => {
     try {
       const token = localStorage.getItem('token');
 
-      await axios.delete(`http://localhost:5000/api/sites/${siteId}`, {
+      await axios.delete(`https://vercel.com/aerlaws-projects/eventculture-backend/api/sites/${siteId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

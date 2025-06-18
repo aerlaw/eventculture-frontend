@@ -29,7 +29,7 @@ const CreateLieu = () => {
   // Si id est présent → on va chercher le lieu pour pré-remplir les champs
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5000/api/lieux/${id}`)
+      fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux/${id}`)
         .then((res) => {
           if (!res.ok) throw new Error('Erreur lors de la récupération du lieu');
           return res.json();
@@ -65,8 +65,8 @@ const CreateLieu = () => {
     try {
       const method = id ? 'PUT' : 'POST';
       const url = id
-        ? `http://localhost:5000/api/lieux/${id}`
-        : 'http://localhost:5000/api/lieux';
+        ? `https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux/${id}`
+        : 'https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux';
 
       const res = await fetch(url, {
         method,

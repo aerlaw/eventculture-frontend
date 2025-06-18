@@ -50,14 +50,14 @@ const CreateSite = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/lieux", {
+    fetch("https://vercel.com/aerlaws-projects/eventculture-backend/api/lieux", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => res.json())
       .then((data) => setLieux(data))
       .catch((err) => console.error(err));
 
-    fetch(`http://localhost:5000/api/parcours?user_id=${user.id}`, {
+    fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours?user_id=${user.id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((res) => res.json())
@@ -70,7 +70,7 @@ const CreateSite = () => {
 
     const fetchSite = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/sites/${siteId}`, {
+        const response = await fetch(`https://vercel.com/aerlaws-projects/eventculture-backend/api/sites/${siteId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -140,8 +140,8 @@ const CreateSite = () => {
     e.preventDefault();
 
     const url = siteId
-      ? `http://localhost:5000/api/sites/${siteId}`
-      : "http://localhost:5000/api/sites";
+      ? `https://vercel.com/aerlaws-projects/eventculture-backend/api/sites/${siteId}`
+      : "https://vercel.com/aerlaws-projects/eventculture-backend/api/sites";
     const method = siteId ? "PUT" : "POST";
 
     try {

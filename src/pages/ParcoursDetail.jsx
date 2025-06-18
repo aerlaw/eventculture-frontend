@@ -13,7 +13,7 @@ const ParcoursDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/parcours/${id}`)
+      .get(`https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours/${id}`)
       .then((res) => setParcours(res.data))
       .catch((err) => console.error("Erreur lors du chargement du parcours :", err));
   }, [id]);
@@ -21,7 +21,7 @@ const ParcoursDetail = () => {
   const handleDelete = async () => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer ce parcours ?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/parcours/${id}`);
+        await axios.delete(`https://vercel.com/aerlaws-projects/eventculture-backend/api/parcours/${id}`);
         alert('Parcours supprimé avec succès.');
         navigate('/parcours');
       } catch (err) {
@@ -70,7 +70,7 @@ const ParcoursDetail = () => {
 
           <div className="flex flex-col md:flex-row gap-8 mt-8">
             <img
-              src={parcours.image ? `http://localhost:5000/uploads/${parcours.image}` : 'https://via.placeholder.com/400x400?text=Image+non+disponible'}
+              src={parcours.image ? `https://vercel.com/aerlaws-projects/eventculture-backend/uploads/${parcours.image}` : 'https://via.placeholder.com/400x400?text=Image+non+disponible'}
 
               alt={parcours.title}
               className="rounded-xl w-80 h-80 object-cover shadow-md border border-gray-200"
